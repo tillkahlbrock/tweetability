@@ -1,0 +1,13 @@
+<h1>Pattern</h1>
+<p>
+  <strong>Title: </strong>
+  <%= @pattern.title %>
+</p>
+<p>
+  <strong>Pattern: </strong>
+  <%= @pattern.pattern %>
+</p>
+
+<p>
+  <%= link_to "Fetch Tweets", :controller => "tweets", :action => "list", :pattern_id => @pattern.id %>
+</p>
