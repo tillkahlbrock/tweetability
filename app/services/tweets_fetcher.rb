@@ -1,8 +1,12 @@
 require 'twitter'
 
 class TweetsFetcher
+
+  def initialize client = load_twitter_client
+    @twitter_api = client
+  end
+
   def fetch_new_tweets pattern_id
-    @twitter_api ||= configure_twitter_client
     tweets = []
     tweet_maximum = Tweet.maximum("tid")
     last_id = tweet_maximum.nil? ? 1 : tweet_maximum
@@ -15,7 +19,7 @@ class TweetsFetcher
     tweets
   end
 
-  def configure_twitter_client
+  def load_twitter_client
     Twitter::REST::Client.new do |config|
       config.consumer_key        = AppConfig.twitter['consumer_key']
       config.consumer_secret     = AppConfig.twitter['consumer_secret']
