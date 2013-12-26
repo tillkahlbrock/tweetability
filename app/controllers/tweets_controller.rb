@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_filter :load_tweets_fetcher
 
   def fetch
-    pattern_id = params[:id]
+    pattern_id = params[:id].to_i
     @tweets_fetcher.fetch_new_tweets pattern_id
     redirect_to list_pattern_tweets_path pattern_id
   end
