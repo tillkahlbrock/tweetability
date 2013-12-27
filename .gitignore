@@ -3,7 +3,6 @@
 Guardfile
 tmp/
 vendor/
-bin/
 log/
 *.sqlite3
 config/passwords.yml
