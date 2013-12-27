@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223154600) do
+ActiveRecord::Schema.define(version: 20131227115014) do
 
   create_table "patterns", force: true do |t|
     t.string   "title"
@@ -30,5 +30,14 @@ ActiveRecord::Schema.define(version: 20131223154600) do
   end
 
   add_index "tweets", ["pattern_id"], name: "index_tweets_on_pattern_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "handle"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_hash"
+    t.string   "password_salt"
+  end
 
 end

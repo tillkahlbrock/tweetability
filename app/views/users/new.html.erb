@@ -1,0 +1,32 @@
+<h1>Signup with tweetability</h1>
+<%= form_for @user do |form| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :name, 'Username' %><br />
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :password %><br />
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.label :password_confirmation %><br />
+    <%= form.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= form.label :handle %><br />
+    <%= form.text_field :handle %>
+  </p>
+  <p>
+    <%= form.submit 'Do signup' %>
+  </p>
+<% end %>
