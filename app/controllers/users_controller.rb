@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # creates a user
   def create
     @user = User.new(post_params)
 
