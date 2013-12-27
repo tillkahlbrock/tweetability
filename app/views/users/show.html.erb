@@ -2,4 +2,11 @@
 <p>
   <strong>Handle: </strong>
   <%= @user.handle %>
+
+<p>
+  <%= link_to "All fetched tweets", list_user_tweets_path(@user.id) %>
+</p>
+
+<p>
+  <%= link_to "Fetch tweets", fetch_user_tweets_path(@user.id) %>
 </p>
