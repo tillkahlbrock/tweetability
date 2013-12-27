@@ -1,3 +1,9 @@
 language: ruby
 rvm:
-  - "2.0.0"
+- 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ui2RD87jbJA+RSyNM6yZsTHXi0dHBQHm2Z152JRHI7YQyZTbhBOS0EnpnZqGt8dB0JYobeg4TxsO40ii4HANSDs2FjauE1ikFqRQ1C1j2NBAIfb+W9cyUAiph5HYS8B6vlA2zKnjLaILbG3PRz2B4IhMsM9mxtuqw2Yn10WcLBQ=
+  app: tweetability
+  on: master
