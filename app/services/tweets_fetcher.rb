@@ -2,17 +2,17 @@ require 'twitter'
 
 class TweetsFetcher
 
-  def initialize client = load_twitter_client
+  def initialize(client = load_twitter_client)
     @twitter_api = client
   end
 
-  def fetch_new_tweets pattern_id
+  def fetch_new_tweets user_id
     tweets = []
     tweet_maximum = Tweet.maximum("tid")
     last_id = tweet_maximum.nil? ? 1 : tweet_maximum
     options = {:since_id => last_id}
     @twitter_api.user_timeline('till_ka', options).each do |t|
-      tweet = {:created => t.created_at, :text => t.full_text, :pattern_id => pattern_id, :tid => t.id}
+      tweet = {:created => t.created_at, :text => t.full_text, :user_id => user_id, :tid => t.id}
       tweets.push tweet
     end
     Tweet.save_all(tweets)

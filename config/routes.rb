@@ -7,15 +7,15 @@ Tweetability::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
 
   resources :sessions
-  resources :users
 
-  resources :patterns do
+  resources :users do
     resource :tweets do
       collection do
         get 'list'
       end
+      get 'fetch'
     end
   end
 
-  get 'patterns/:id/tweets/fetch' => 'tweets#fetch'
+  get 'users/:id/tweets/fetch' => 'tweets#fetch'
 end
