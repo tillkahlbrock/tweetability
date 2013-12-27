@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131227115014) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "patterns", force: true do |t|
     t.string   "title"
     t.string   "pattern"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131227115014) do
     t.string   "tid"
   end
 
-  add_index "tweets", ["pattern_id"], name: "index_tweets_on_pattern_id"
+  add_index "tweets", ["pattern_id"], name: "index_tweets_on_pattern_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
