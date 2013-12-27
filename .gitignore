@@ -1,12 +1,9 @@
 .idea/
 .rspec
-Gemfile
-Gemfile.lock
 Guardfile
 tmp/
 vendor/
 bin/
 log/
 *.sqlite3
-config/database.yml
 config/passwords.yml
