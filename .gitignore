@@ -1,9 +1,6 @@
+db/*.sqlite3
+log/*.log
+tmp/**/*
 .idea/
-.rspec
-Guardfile
-tmp/
-vendor/
-log/
-*.sqlite3
 config/passwords.yml
 config/env_settings.sh
