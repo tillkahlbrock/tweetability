@@ -7,3 +7,4 @@ bin/
 log/
 *.sqlite3
 config/passwords.yml
+config/env_settings.sh

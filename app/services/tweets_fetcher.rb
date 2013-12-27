@@ -21,10 +21,10 @@ class TweetsFetcher
 
   def load_twitter_client
     Twitter::REST::Client.new do |config|
-      config.consumer_key        = AppConfig.twitter['consumer_key']
-      config.consumer_secret     = AppConfig.twitter['consumer_secret']
-      config.access_token        = AppConfig.twitter['access_token']
-      config.access_token_secret = AppConfig.twitter['access_token_secret']
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
+      config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
   end
 end
