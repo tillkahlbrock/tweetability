@@ -21,11 +21,8 @@ gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby',:require => "bcrypt"
 
-gem 'rspec-rails', :group => [:test, :development]
-
-group :test do
-  gem 'factory_girl_rails'
-  gem 'capybara'
+group :test, :development do
+  gem 'rspec-rails'
 end
 
 ruby "2.0.0"

@@ -1,4 +1,4 @@
-require 'rspec'
+require 'rspec-rails'
 
 describe 'Fetch Tweets' do
   it 'should use the twitter api client to fetch new tweets' do
