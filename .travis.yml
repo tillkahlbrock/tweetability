@@ -4,7 +4,7 @@ rvm:
 deploy:
   provider: heroku
   api_key:
-    secure: Ui2RD87jbJA+RSyNM6yZsTHXi0dHBQHm2Z152JRHI7YQyZTbhBOS0EnpnZqGt8dB0JYobeg4TxsO40ii4HANSDs2FjauE1ikFqRQ1C1j2NBAIfb+W9cyUAiph5HYS8B6vlA2zKnjLaILbG3PRz2B4IhMsM9mxtuqw2Yn10WcLBQ=
+    secure: Jpax6EZ3MLrSFH7AwDqJ27G1m4/1okaocxrNkRZVuXZW3ZbdMVPo0Ss/bTaf0J26HTo5fsuNx+XqP1UW2CYX6TtsK6scu6YET7SrSUoJKnNDCsshOOnRZe6X2mIJdPxvEnE559X+cN/YJKtuHPfwZaQ2hYgKcuQkKYB07DGsArs=
   app: tweetability
-  on: master
-  rvm: 2.0.0
+  on:
+    repo: tillkahlbrock/tweetability
