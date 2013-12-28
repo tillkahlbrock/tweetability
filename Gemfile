@@ -23,6 +23,7 @@ gem 'bcrypt-ruby',:require => "bcrypt"
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 ruby "2.0.0"

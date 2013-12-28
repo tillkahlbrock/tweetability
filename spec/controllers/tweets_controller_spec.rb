@@ -8,6 +8,7 @@ describe TweetsController do
       expect(fake_tweets_fetcher).to receive(:fetch_new_tweets).with(user_id)
       controller.load_tweets_fetcher(fake_tweets_fetcher)
 
+      session[:user_id] = user_id
       get :fetch, :user_id => user_id
 
     end
