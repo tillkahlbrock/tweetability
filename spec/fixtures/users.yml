@@ -1,0 +1,10 @@
+<%
+  password = "secrete"
+  password_salt = BCrypt::Engine.generate_salt
+ %>
+
+david:
+  name: david_tester
+  handle: david_at_twitter
+  password_hash: <%= BCrypt::Engine.hash_secret(password, password_salt) %>
+  password_salt: <%= password_salt %>
