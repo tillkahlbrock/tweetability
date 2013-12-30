@@ -28,4 +28,6 @@ RSpec.configure do |config|
   config.order = "random"
   config.mock_with :rspec
   config.include Capybara::DSL
+  config.include(UserAuthentication)
+  config.include(Tweets)
 end
