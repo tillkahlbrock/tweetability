@@ -6,14 +6,14 @@ describe "LoginFlows" do
 
     it "redirects to the login form if the log in failed" do
       failed_log_in(:david)
-      assert_equal '/sessions', path
-      assert_equal 'Invalid username or password', flash[:alert]
+      current_path.should eq '/sessions'
+      page.should have_content 'Invalid username or password'
     end
 
     it "redirects to the root path and displays a success message when the user logged in" do
       log_in :david
-      assert_equal '/', path
-      assert_equal 'Logged in!', flash[:notice]
+      current_path.should eq root_path
+      page.should have_content 'Logged in!'
     end
   end
 end

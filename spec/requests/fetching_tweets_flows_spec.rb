@@ -8,10 +8,10 @@ describe 'FetchingTweetsFlows' do
       TweetsFetcher.any_instance.stub(:fetch_new_tweets)
       david = log_in :david
       create_plain_tweet_for(david)
-      get fetch_user_tweets_path(david.id)
-      assert_redirected_to list_user_tweets_path david.id
-      get list_user_tweets_path david.id
-      assert_select 'span', tweets(:plain).text
+      visit user_path(david.id)
+      click_link "Fetch tweets"
+      current_path.should eq list_user_tweets_path(david.id)
+      page.should have_content tweets(:plain).text
     end
   end
 end
